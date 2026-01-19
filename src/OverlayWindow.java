@@ -182,14 +182,15 @@ public class OverlayWindow extends JFrame {
                 if ("JENSENSRANGE".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
                 if ("ALBASRAH".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
                 if ("ANVIL".equals(settings.getGameMap())) drawScaleLinesTypeTwo(g);
-                if ("BLACKCOAST".equals(settings.getGameMap())) drawScaleLinesForBlackCoast(g);
+                if ("BLACKCOAST".equals(settings.getGameMap())) drawScaleLinesTypeFour(g);
                 if ("FALLUJAH".equals(settings.getGameMap())) drawScaleLinesTypeTwo(g);
                 if("FOOLSROAD".equals(settings.getGameMap())) drawScaleLineForFoolsRoad(g);
                 if ("GOOSEBAY".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
                 if("GORODOK".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
-                if("MANICOUGAN".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
+                if("MANICOUGAN".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
                 if ("MUTAHA".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
                 if ("NARVA".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
+                if ("SANXIANISLANDS".equals(settings.getGameMap())) drawScaleLinesTypeFour(g);
                 if ("YEGORYEVKA".equals(settings.getGameMap())) drawScaleLinesForYegoryevka(g);
             }
 
@@ -393,7 +394,7 @@ public class OverlayWindow extends JFrame {
                 }
             }
 
-            private void drawScaleLinesForBlackCoast(Graphics g) {
+            private void drawScaleLinesTypeFour(Graphics g) {
                 String mapType = settings.getMapType();
                 int zoom = settings.getZoomLevel();
                 double coeff = settings.getScaleCoefficient();

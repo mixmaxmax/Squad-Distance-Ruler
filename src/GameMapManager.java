@@ -15,7 +15,7 @@ public class GameMapManager {
         initGooseBay();
         initGorodok();
 //        initHarju();
-//        initKamdeshHighLands();
+//        initKamdeshHighlands();
 //        initKohatToi();
 //        initKokan();
 //        initLashkarValley();
@@ -25,7 +25,7 @@ public class GameMapManager {
         initMutaha();
         initNarva();
 //        initPacificProvingGrounds();
-//        initSanxianIslands();
+        initSanxianIslands();
 //        initSkorpo();
 //        initSumariBala();
 //        initTalilOutskirts();
@@ -1130,6 +1130,111 @@ public class GameMapManager {
         narvaCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("NARVA", "Narva", 7, narvaCoeffs));
+    }
+
+    private static void initSanxianIslands() {
+        Map<String, Map<String, double[]>> sanxianIslandsCoeffs = new HashMap<>();
+
+        Map<String, double[]> fhdCoeffs = new HashMap<>();
+        fhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/152.0,
+                900.0/227.0,
+                900.0/340.0,
+                300.0/170.0,
+                300.0/255.0,
+                300.0/382.0,
+                100.0/192.0,
+                100.0/258.0
+        });
+        fhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/189.0,
+                900.0/282.0,
+                900.0/423.0,
+                900.0/634.0,
+                300.0/317.0,
+                300.0/476.0,
+                100.0/238.0,
+                100.0/320.0
+        });
+        fhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/158.0,
+                900.0/236.0,
+                900.0/353.0,
+                300.0/177.0,
+                300.0/265.0,
+                300.0/397.0,
+                100.0/199.0,
+                100.0/268.0
+        });
+        sanxianIslandsCoeffs.put("1920x1080", fhdCoeffs);
+
+        Map<String, double[]> qhdCoeffs = new HashMap<>();
+        qhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/202.0,
+                900.0/303.0,
+                900.0/453.0,
+                300.0/227.0,
+                300.0/340.0,
+                300.0/510.0,
+                100.0/256.0,
+                100.0/344.0
+        });
+        qhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/251.0,
+                900.0/376.0,
+                900.0/563.0,
+                900.0/845.0,
+                300.0/423.0,
+                300.0/634.0,
+                100.0/317.0,
+                100.0/427.0
+        });
+        qhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/210.0,
+                900.0/314.0,
+                900.0/471.0,
+                300.0/236.0,
+                300.0/353.0,
+                300.0/529.0,
+                100.0/265.0,
+                100.0/357.0
+        });
+        sanxianIslandsCoeffs.put("2560x1440", qhdCoeffs);
+
+        Map<String, double[]> uhdCoeffs = new HashMap<>();
+        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/0.0,
+                900.0/0.0,
+                900.0/0.0,
+                300.0/0.0,
+                300.0/0.0,
+                100.0/0.0,
+                100.0/0.0,
+                100.0/0.0
+        });
+        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/0.0,
+                900.0/0.0,
+                900.0/0.0,
+                300.0/0.0,
+                300.0/0.0,
+                300.0/0.0,
+                100.0/0.0,
+                100.0/0.0
+        });
+        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/0.0,
+                900.0/0.0,
+                900.0/0.0,
+                300.0/0.0,
+                300.0/0.0,
+                300.0/0.0,
+                100.0/0.0,
+                100.0/0.0
+        });
+        sanxianIslandsCoeffs.put("3840x2160", uhdCoeffs);
+
+        addMap(new GameMap("SANXIANISLANDS", "Sanxian Islands", 8, sanxianIslandsCoeffs));
     }
 
     private static void initYegoryevka() {

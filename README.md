@@ -1,76 +1,75 @@
 # Squad Distance Rule
 
-Это инструмент для измерения расстояния между точками на карте в игре [Squad](https://store.steampowered.com/app/393380/Squad/).  
-Он поможет Вам лучше ориентироваться при игре с ручным или подствольным гранатометом, за снайпера или на миномете.  
+This is a tool for measuring the distance between points on the map in the [Squad](https://store.steampowered.com/app/393380/Squad/) game.  
+It will help you navigate better when playing with a hand-held or under-barrel grenade launcher, as a sniper or on a mortar.
 
-Данная программа не обращается к внутриигровым данным и не является читом. Измерения происходят за счет косвенных признаков: количество отрисованных пикселей в масштабной линии. 
+This program does not access in-game data and is not a cheat. Measurements are made due to indirect signs: the number of rendered pixels in the scale line.
 
-## Требования
-Java 17 или выше.  
-Установите официальную версию Java для Вашей операционной системы с сайта производителя - https://www.oracle.com/java/technologies/downloads/  
-В *Windows/Linux* Вы можете узнать текущую версию Java через *командную строку/терминал*: `java -version`. 
+## Requirements
+Java 17 or higher.  
+Install the official Java version for your operating system from the manufacturer's website - https://www.oracle.com/java/technologies/downloads/  
+In *Windows/Linux* You can find out the current Java version in the *command line/terminal*: `java -version`.
 
-## Загрузка
-Скачайте последнюю версию - https://github.com/mixmaxmax/Squad-Distance-Ruler/releases  
-Вы можете скачать только исполняемый файл - `SquadDistanceRuler.jar`.  
-Или скачайте весь проект целиком и соберите самостоятельно.
-
-***
-## Описание
-### 1. Запустите `SquadDistanceRuler.jar`.  
-
-![Главное окно](imgs/img1.png)  
-
-### 2. В главном окне программы выберите разрешение Вашего экрана (разрешение игры должно быть идентичным).  
-
-![Выбор разрешения](imgs/img2.png)  
-
-### 3. Так же выберите карту.  
-
-![Выбор карты](imgs/img3.png)  
-
-### 4. Откройте оверлей.
-
-![Оверлей](imgs/img4.png)  
-
-### 5. С помощью кнопок в панели управления выберите тип миникарты и уровень приближения.  
-
-![Тип карты и зум](imgs/img5.png)
-
-Обратите внимание! В игре есть три разные миникарты. По умолчанию они открываются кнопками *M, CapsLock, Enter*.  
-Убедитесь, что Вы выбрали соответствующий тип в оверлее.  
-
-Также необходимо знать, что на разных игровых картах существует разное количество степеней приближения миникарты.  
-К сожалению, разработчики реализовали приближение нечетко. Чтобы выставить соответствующий уровень приближения, старайтесь приближать карту в игре с минимального уровня и с интервалом во времени 1 секунда. Так получится установить соответствие между игрой и оверлеем.
-
-### 6. Расположите оверлей поверх игровой миникарты так, чтоб вы могли установить две точки, между которыми желаете измерить расстояние.
-
-![Измерение расстояния](imgs/img6.png)  
-
-Если вы правильно выбрали уровень приближения и тип миникарты, то зеленые масштабные линии оверлея будут такой же длины, что внутриигровые. 
-Необязательно располагать оверлей так, чтоб его масштабные линии находились поверх внутриигровых. На скриншоте это сделано для наглядности. 
-
-Указателем мыши установите две точки на карте. Тогда между ними отрисуется красный отрезок и текст с измеренным расстоянием.  
-
-Желтая линия показывает измеренное расстояние, как масштабная.  
-
-### 7. Узнав расстояние, поразите цель
-
-![Поражение цели](imgs/img7.png)  
-
-### 8. Кнопки Отчистик и Выхода  
-![Кнопки Отчистик и Выхода](imgs/img8.png)  
-
-Кнопка *Reset* отчищает панель оверлея.
-
-Кнопка *Close* закрывает панель оверлея.
-Также закрыть панель оверлея можно по нажатии *Escape*.
+## Download
+Download the latest version - https://github.com/mixmaxmax/Squad-Distance-Ruler/releases   
+You can download only the executable file - `SquadDistanceRuler.jar`.  
+Or download the entire project and build it yourself.
 
 ***
+## Description
+### 1. Run `SquadDistanceRuler.jar `.
 
-# Поддерживаемые карты и разрешения экрана
+![Main window](imgs/img1.png)
 
-| Карта                   | 1920x1080  |  2560x1440 | 3840x2160  |
+### 2. In the main window of the program, select the resolution of your screen (the resolution of the game must be identical).
+
+![Select resolution](imgs/img2.png)
+
+### 3. Also select a game map.
+
+![Select map](imgs/img3.png)
+
+### 4. Open the overlay panel.
+
+![Overlay panel](imgs/img4.png)
+
+### 5. Use the buttons in the control panel to select the type of minimap and the zoom level.
+
+![Map type and zoom](imgs/img5.png)
+
+Please note! There are three different minimaps in the game. By default, they are opened using the *M, CapsLock, Enter* buttons.  
+Make sure that you have selected the appropriate type in the overlay.
+
+You also need to know that there are different degrees of approximation of the minimap on different game maps.  
+Unfortunately, the developers did not implement the approximation very explicitly. To set the appropriate zoom level, try to zoom in on the map in the game from the minimum level and with a time interval of 1 second. This way you can establish a correspondence between the game and the overlay.
+### 6. Place the overlay on top of the game minimap so that you can set two points between which you want to measure the distance.
+
+![Measuring the distance](imgs/img6.png)
+
+If you have chosen the zoom level and the type of minimap correctly, then the green scale overlay lines will be the same length as the in-game ones.
+It is not necessary to position the overlay so that its scale lines are on top of the in-game ones. In the screenshot, this is done for clarity.
+
+Use the mouse pointer to set two points on the map. Then a red line and a text with the measured distance will be drawn between them.
+
+The yellow line shows the measured distance in parallel with the scale lines.
+
+### 7. After finding out the distance, hit the target
+
+![Defeating the target](imgs/img7.png)
+
+### 8. Reset and Close buttons
+![Reset and Close buttons](imgs/img8.png)
+
+The *Reset* button clears the overlay panel.
+
+The *Close* button closes the overlay panel.
+You can also close the overlay panel by pressing *Escape*.
+
+***
+
+# Supported maps and screen resolutions
+
+| Map                     | 1920x1080  |  2560x1440 | 3840x2160  |
 |:------------------------|:----------:|:-----------:|:----------:|
 | Jensen's Range          | ✔️ | ✔️ |     ⚠️     |
 | Al Basrah               | ✔️ | ✔️ |     ❌      |
@@ -93,13 +92,13 @@ Java 17 или выше.
 | Mutaha                  | ✔️ | ✔️ |     ❌      |
 | Narva                   | ✔️ | ✔️ |     ❌      |
 | Pacific Proving Grounds | ❌ | ❌ |     ❌      |
-| Sanxian Islands         | ❌ | ❌ |     ❌      |
+| Sanxian Islands         | ✔️ | ✔️ |     ❌      |
 | Skorpo                  | ❌ | ❌ |     ❌      |
 | Sumari Bala             | ❌ | ❌ |     ❌      |
 | Talil Outskirts         | ❌ | ❌ |     ❌      |
 | Yegoryevka              | ✔️ | ✔️ |     ❌      |
- 
 
-К сожалению, у меня нет нативного 4K экрана для возможности добавления этого разрешения.  
 
-Добавление поддержки новых карт возможно в будущем.
+Unfortunately, I don't have a native 4K screen to be able to add this resolution.
+
+Adding support for new maps is possible in the future.
