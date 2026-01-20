@@ -206,39 +206,8 @@ public class GameMapManager {
         });
         alBasrahCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         alBasrahCoeffs.put("3840x2160", uhdCoeffs);
-
         addMap(new GameMap("ALBASRAH", "Al Basrah", 8, alBasrahCoeffs));
     }
     private static void initAnvil(){
@@ -304,36 +273,8 @@ public class GameMapManager {
         });
         anvilCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         anvilCoeffs.put("3840x2160", uhdCoeffs);
-
         addMap(new GameMap("ANVIL", "Anvil", 7, anvilCoeffs));
     }
 
@@ -406,37 +347,7 @@ public class GameMapManager {
         });
         blackCoastCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         blackCoastCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("BLACKCOAST", "Black Coast", 8, blackCoastCoeffs));
@@ -505,34 +416,7 @@ public class GameMapManager {
         });
         fallujahCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         fallujahCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("FALLUJAH", "Fallujah", 7, fallujahCoeffs));
@@ -595,31 +479,7 @@ public class GameMapManager {
         });
         foolsRoadCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         foolsRoadCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("FOOLSROAD", "Fool's Road", 6, foolsRoadCoeffs));
@@ -694,37 +554,7 @@ public class GameMapManager {
         });
         gooseBayCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         gooseBayCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("GOOSEBAY", "Goose Bay", 8, gooseBayCoeffs));
@@ -759,7 +589,8 @@ public class GameMapManager {
                 900.0/267.0,
                 900.0/400.0,
                 300.0/200.0,
-                300.0/300.0,
+//                300.0/300.0,
+                1,
                 300.0/449.0,
                 100.0/225.0,
                 100.0/268.0
@@ -799,37 +630,7 @@ public class GameMapManager {
         });
         gorodokCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         gorodokCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("GORODOK", "Gorodok", 8, gorodokCoeffs));
@@ -904,37 +705,7 @@ public class GameMapManager {
         });
         manicouganCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         manicouganCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("MANICOUGAN", "Manicougan", 8, manicouganCoeffs));
@@ -1003,34 +774,7 @@ public class GameMapManager {
         });
         mutahaCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         mutahaCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("MUTAHA", "Mutaha", 7, mutahaCoeffs));
@@ -1099,34 +843,7 @@ public class GameMapManager {
         });
         narvaCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         narvaCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("NARVA", "Narva", 7, narvaCoeffs));
@@ -1201,37 +918,7 @@ public class GameMapManager {
         });
         sanxianIslandsCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         sanxianIslandsCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("SANXIANISLANDS", "Sanxian Islands", 8, sanxianIslandsCoeffs));
@@ -1312,40 +999,7 @@ public class GameMapManager {
         });
         yegoryevkaCoeffs.put("2560x1440", qhdCoeffs);
 
-        Map<String, double[]> uhdCoeffs = new HashMap<>();
-        uhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
-        uhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                900.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                300.0/0.0,
-                100.0/0.0,
-                100.0/0.0
-        });
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
         yegoryevkaCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("YEGORYEVKA", "Yegoryevka", 9, yegoryevkaCoeffs));
@@ -1363,13 +1017,22 @@ public class GameMapManager {
         return new ArrayList<>(ALL_MAPS.values());
     }
 
-    public static String[] getAllMapNames() {
-        return ALL_MAPS.keySet().toArray(new String[0]);
-    }
-
     public static String[] getAllDisplayNames() {
         return ALL_MAPS.values().stream()
                 .map(GameMap::getDisplayName)
                 .toArray(String[]::new);
+    }
+
+    private static Map<String, double[]> calculateCoeffsUHD(Map<String, double[]> fhdSource) {
+        Map<String, double[]> result = new HashMap<>();
+        for(Map.Entry<String, double []> entry : fhdSource.entrySet()) {
+            double [] src = entry.getValue();
+            double [] dst = new double [src.length];
+            for (int i = 0; i < src.length; i++) {
+                dst[i] = src[i] * 0.5;
+            }
+            result.put(entry.getKey(), dst);
+        }
+        return result;
     }
 }

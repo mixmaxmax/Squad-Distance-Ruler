@@ -119,7 +119,7 @@ public class MainWindow {
     }
 
     private void showResolutionDialog() {
-        String[] options = {"1920x1080 (Full HD)", "2560x1440 (Quad HD)", "3840x2160 (4K Ultra HD) - WILL BE LATER"};
+        String[] options = {"1920x1080 (Full HD)", "2560x1440 (Quad HD)", "3840x2160 (4K Ultra HD) - NOT TESTED!"};
 
         String current = settings.getResolution();
         int defaultIndex = 1;
