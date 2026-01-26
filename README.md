@@ -93,7 +93,7 @@ You can also close the overlay panel by pressing *Escape*.
 | Narva                   |    ✔️     |    ✔️     |    ⚠️     |
 | Pacific Proving Grounds |     ❌     |     ❌     |     ❌     |
 | Sanxian Islands         |    ✔️     |    ✔️     |    ⚠️     |
-| Skorpo                  |     ❌     |     ❌     |     ❌     |
+| Skorpo                  |     ✔️     |     ✔️     |     ️⚠️     |
 | Sumari Bala             |     ❌     |     ❌     |     ❌     |
 | Talil Outskirts         |     ❌     |     ❌     |     ❌     |
 | Yegoryevka              |    ✔️     |    ✔️     |    ⚠️     |

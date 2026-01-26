@@ -84,7 +84,7 @@ Java 17 или выше.
 | Gorodok                 |    ✔️     |    ✔️     |    ⚠️     |
 | Harju                   |     ❌     |     ❌     |     ❌     |
 | Kamdesh Highlands       |     ❌     |     ❌     |     ❌     |
-| Kohat Toi               |     ❌     |     ❌     |     ❌     |
+| Kohat Toi               |     ❌     |     ❌     |     ❌     | 
 | Kokan                   |     ❌     |     ❌     |     ❌     |
 | Lashkar Valley          |     ❌     |     ❌     |     ❌     |
 | Logar Valley            |     ❌     |     ❌     |     ❌     |
@@ -94,7 +94,7 @@ Java 17 или выше.
 | Narva                   |    ✔️     |    ✔️     |    ⚠️     |
 | Pacific Proving Grounds |     ❌     |     ❌     |     ❌     |
 | Sanxian Islands         |    ✔️     |    ✔️     |    ⚠️     |
-| Skorpo                  |     ❌     |     ❌     |     ❌     |
+| Skorpo                  |  ✔️       |     ✔️    |    ⚠️     |
 | Sumari Bala             |     ❌     |     ❌     |     ❌     |
 | Talil Outskirts         |     ❌     |     ❌     |     ❌     |
 | Yegoryevka              |    ✔️     |    ✔️     |    ⚠️     |

@@ -191,6 +191,7 @@ public class OverlayWindow extends JFrame {
                 if ("MUTAHA".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
                 if ("NARVA".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
                 if ("SANXIANISLANDS".equals(settings.getGameMap())) drawScaleLinesTypeFour(g);
+                if ("SKORPO".equals(settings.getGameMap())) drawScaleLinesForSkorpo(g);
                 if ("YEGORYEVKA".equals(settings.getGameMap())) drawScaleLinesForYegoryevka(g);
             }
 
@@ -513,6 +514,68 @@ public class OverlayWindow extends JFrame {
                         currentY -= SCALE_LINE_SPACING;
                     }
                     if (zoom >= 2) {
+                        drawScaleLineWithPosition(g, scaleLine33, coeff, currentY);
+                    }
+                }
+            }
+
+            private void drawScaleLinesForSkorpo(Graphics g) {
+                String mapType = settings.getMapType();
+                int zoom = settings.getZoomLevel();
+                double coeff = settings.getScaleCoefficient();
+
+                int currentY = getWindowSize() - SCALE_LINE_BASE_Y_OFFSET;
+
+                if ("MAP_ON_DEFAULT_M".equals(mapType)) {
+                    if (zoom <= 3) {
+                        drawScaleLineWithPosition(g, scaleLine900, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 1 && zoom <= 6) {
+                        drawScaleLineWithPosition(g, scaleLine300, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 3) {
+                        drawScaleLineWithPosition(g, scaleLine100, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 5) {
+                        drawScaleLineWithPosition(g, scaleLine33, coeff, currentY);
+                    }
+                }
+
+                if ("MAP_ON_DEFAULT_CAPSLOCK".equals(mapType)) {
+                    if (zoom <= 4) {
+                        drawScaleLineWithPosition(g, scaleLine900, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 1 && zoom <= 6) {
+                        drawScaleLineWithPosition(g, scaleLine300, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 4) {
+                        drawScaleLineWithPosition(g, scaleLine100, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 6) {
+                        drawScaleLineWithPosition(g, scaleLine33, coeff, currentY);
+                    }
+                }
+
+                if ("MAP_ON_DEFAULT_ENTER".equals(mapType)) {
+                    if (zoom <= 3) {
+                        drawScaleLineWithPosition(g, scaleLine900, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 1 && zoom <= 6) {
+                        drawScaleLineWithPosition(g, scaleLine300, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 4) {
+                        drawScaleLineWithPosition(g, scaleLine100, coeff, currentY);
+                        currentY -= SCALE_LINE_SPACING;
+                    }
+                    if (zoom >= 5) {
                         drawScaleLineWithPosition(g, scaleLine33, coeff, currentY);
                     }
                 }

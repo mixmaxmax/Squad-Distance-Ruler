@@ -26,7 +26,7 @@ public class GameMapManager {
         initNarva();
 //        initPacificProvingGrounds();
         initSanxianIslands();
-//        initSkorpo();
+        initSkorpo();
 //        initSumariBala();
 //        initTalilOutskirts();
         initYegoryevka();
@@ -922,6 +922,87 @@ public class GameMapManager {
         sanxianIslandsCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("SANXIANISLANDS", "Sanxian Islands", 8, sanxianIslandsCoeffs));
+    }
+
+    private static void initSkorpo() {
+        Map<String, Map<String, double[]>> skorpoCoeffs = new HashMap<>();
+
+        Map<String, double[]> fhdCoeffs = new HashMap<>();
+        fhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/102.0,
+                900.0/153.0,
+                900.0/229.0,
+                900.0/342.0,
+                300.0/172.0,
+                300.0/257.0,
+                300.0/385.0,
+                100.0/193.0,
+                100.0/258.0
+        });
+        fhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/127.0,
+                900.0/190.0,
+                900.0/284.0,
+                900.0/426.0,
+                900.0/638.0,
+                300.0/320.0,
+                300.0/479.0,
+                100.0/240.0,
+                100.0/321.0
+        });
+        fhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/106.0,
+                900.0/159.0,
+                900.0/237.0,
+                900.0/356.0,
+                300.0/178.0,
+                300.0/267.0,
+                300.0/400.0,
+                100.0/201.0,
+                100.0/268.0
+        });
+        skorpoCoeffs.put("1920x1080", fhdCoeffs);
+
+        Map<String, double[]> qhdCoeffs = new HashMap<>();
+        qhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/136.0,
+                900.0/204.0,
+                900.0/305.0,
+                900.0/457.0,
+                300.0/229.0,
+                300.0/343.0,
+                300.0/514.0,
+                100.0/258.0,
+                100.0/345.0
+        });
+        qhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/169.0,
+                900.0/253.0,
+                900.0/379.0,
+                900.0/567.0,
+                900.0/851.0,
+                300.0/426.0,
+                300.0/638.0,
+                100.0/320.0,
+                100.0/428.0
+        });
+        qhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/141.0,
+                900.0/211.0,
+                900.0/316.0,
+                900.0/474.0,
+                300.0/237.0,
+                300.0/356.0,
+                300.0/533.0,
+                100.0/267.0,
+                100.0/358.0
+        });
+        skorpoCoeffs.put("2560x1440", qhdCoeffs);
+
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
+        skorpoCoeffs.put("3840x2160", uhdCoeffs);
+
+        addMap(new GameMap("SKORPO", "Skorpo", 9, skorpoCoeffs));
     }
 
     private static void initYegoryevka() {
