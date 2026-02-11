@@ -20,7 +20,7 @@ public class GameMapManager {
 //        initKokan();
 //        initLashkarValley();
 //        initLogarValley();
-        initManicougan();
+        initManicouagan();
 //        initMestia();
         initMutaha();
         initNarva();
@@ -636,8 +636,8 @@ public class GameMapManager {
         addMap(new GameMap("GORODOK", "Gorodok", 8, gorodokCoeffs));
     }
 
-    private static void initManicougan(){
-        Map<String, Map<String, double[]>> manicouganCoeffs = new HashMap<>();
+    private static void initManicouagan(){
+        Map<String, Map<String, double[]>> manicouaganCoeffs = new HashMap<>();
 
         Map<String, double[]> fhdCoeffs = new HashMap<>();
         fhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
@@ -670,7 +670,7 @@ public class GameMapManager {
                 100.0/227.0,
                 100.0/268.0
         });
-        manicouganCoeffs.put("1920x1080", fhdCoeffs);
+        manicouaganCoeffs.put("1920x1080", fhdCoeffs);
 
         Map<String, double[]> qhdCoeffs = new HashMap<>();
         qhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
@@ -703,12 +703,12 @@ public class GameMapManager {
                 100.0/302.0,
                 100.0/357.0
         });
-        manicouganCoeffs.put("2560x1440", qhdCoeffs);
+        manicouaganCoeffs.put("2560x1440", qhdCoeffs);
 
         Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
-        manicouganCoeffs.put("3840x2160", uhdCoeffs);
+        manicouaganCoeffs.put("3840x2160", uhdCoeffs);
 
-        addMap(new GameMap("MANICOUGAN", "Manicougan", 8, manicouganCoeffs));
+        addMap(new GameMap("MANICOUAGAN", "Manicouagan", 8, manicouaganCoeffs));
     }
 
     private static void initMutaha(){
