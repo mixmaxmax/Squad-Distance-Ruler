@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.List;
 
 public class OverlayWindow extends JFrame {
 
@@ -26,6 +27,7 @@ public class OverlayWindow extends JFrame {
     private static final int LINE_THICKNESS = 4;
     private static final int BORDER_THICKNESS = 1;
     private static final int FONT_SIZE = 24;
+    private static final int WEAPON_FONT_SIZE = 20;
     private static final String FONT_NAME = "Arial";
     private static final int TEXT_MARGIN = 40;
 
@@ -35,6 +37,7 @@ public class OverlayWindow extends JFrame {
     private static final Color POINT_COLOR = Color.RED;
     private static final Color LINE_COLOR = Color.RED;
     private static final Color TEXT_COLOR = Color.RED;
+    private static final Color WEAPON_TEXT_COLOR = new Color(98, 255, 243, 255);
     private static final Color BACKGROUND_COLOR = new Color(255, 255, 255, 50);
     private static final Color BORDER_COLOR = Color.GRAY;
     private static final Color CONTROL_PANEL_COLOR = new Color(50, 50, 50);
@@ -65,6 +68,7 @@ public class OverlayWindow extends JFrame {
     private final ScaleLine scaleLine100;
     private final ScaleLine scaleLine300;
     private final ScaleLine scaleLine900;
+    private final Weapon weapon;
 
     private int getWindowSize() {
         return switch (settings.getResolution()) {
@@ -97,13 +101,13 @@ public class OverlayWindow extends JFrame {
         };
     }
 
-    public OverlayWindow(Settings settings) {
+    public OverlayWindow(Settings settings, Weapon weapon) {
         this.settings = settings;
         int windowSize = getWindowSize();
         int startX = windowSize - 25;
         int fontSize = getFontSize();
         int textShift = getTextShift();
-
+        this.weapon = weapon;
         this.approximateLine = new ApproximateScaleLine(startX, windowSize - 110, textShift + 50, fontSize);
         this.scaleLine33 = new ScaleLine(startX, 0, 33, "33m", textShift - 9, fontSize);
         this.scaleLine100 = new ScaleLine(startX, 0, 100, "100m", textShift, fontSize);
@@ -172,6 +176,10 @@ public class OverlayWindow extends JFrame {
 
                     drawTextWithOutline(g, text, textPosition.x, textPosition.y);
                     drawApproximateLine(g, distanceInPixels, text);
+
+                    if (!(weapon instanceof NoWeapon)) {
+                        drawWeaponAngle(g, distanceInMeters, textPosition.x + 15, textPosition.y);
+                    }
 
                 } else if (point1 != null) {
                     g.setColor(POINT_COLOR);
@@ -703,7 +711,65 @@ public class OverlayWindow extends JFrame {
                 g2d.drawString(text, x, y);
                 g2d.setFont(originalFont);
             }
+
+            private void drawWeaponAngle(Graphics g, double distance, int baseX, int baseY) {
+                Graphics2D g2d = (Graphics2D) g;
+                Font originalFont = g2d.getFont();
+                Color originalColor = g2d.getColor();
+
+                String unit = weapon.getUnit();
+                List<Double> angles = weapon.getAngles(distance);
+                String text;
+
+                if (unit.isEmpty()) {
+                    text = "No weapon selected";
+                } else if (angles.isEmpty()) {
+                    text = "Outside target area";
+                } else {
+                    StringBuilder sb = new StringBuilder();
+                    for (int i = 0; i < angles.size(); i++) {
+                        if (i > 0) sb.append(" / ");
+                        double a = angles.get(i);
+                        if ("°".equals(unit)) {
+                            sb.append(String.format("%.1f%s", a, unit));
+                        } else {
+                            sb.append(String.format("%d%s", Math.round(a), unit));
+                        }
+                    }
+                    text = sb.toString();
+                }
+
+                g2d.setFont(new Font(FONT_NAME, Font.BOLD, WEAPON_FONT_SIZE));
+                FontMetrics fm = g2d.getFontMetrics();
+
+                int x = baseX;
+                int y = baseY + fm.getHeight() + 5;
+
+                if (y + fm.getAscent() > getHeight() - 5) {
+                    y = baseY - 5;
+                }
+                if (x < 5) x = 5;
+                if (x + fm.stringWidth(text) > getWidth() - 5) {
+                    x = getWidth() - fm.stringWidth(text) - 5;
+                }
+
+                g2d.setColor(TEXT_OUTLINE_COLOR);
+                for (int dx = -TEXT_OUTLINE_THICKNESS; dx <= TEXT_OUTLINE_THICKNESS; dx++) {
+                    for (int dy = -TEXT_OUTLINE_THICKNESS; dy <= TEXT_OUTLINE_THICKNESS; dy++) {
+                        if (dx != 0 || dy != 0) {
+                            g2d.drawString(text, x + dx, y + dy);
+                        }
+                    }
+                }
+
+                g2d.setColor(WEAPON_TEXT_COLOR);
+                g2d.drawString(text, x, y);
+
+                g2d.setColor(originalColor);
+                g2d.setFont(originalFont);
+            }
         };
+
 
         drawingPanel.setBorder(BorderFactory.createLineBorder(BORDER_COLOR, BORDER_THICKNESS));
         drawingPanel.setOpaque(false);
@@ -768,9 +834,9 @@ public class OverlayWindow extends JFrame {
         updateScaleInfo();
         updateMapButtonText();
 
-        addWindowListener(new java.awt.event.WindowAdapter() {
+        addWindowListener(new WindowAdapter() {
             @Override
-            public void windowClosing(java.awt.event.WindowEvent e) {
+            public void windowClosing(WindowEvent e) {
                 lastOverlayPosition = getLocation();
             }
         });
@@ -799,10 +865,11 @@ public class OverlayWindow extends JFrame {
         String mapName = settings.getGameMapObject().getDisplayName();
         int maxZoom = settings.getTotalZoomLevels();
         int currentZoom = settings.getZoomLevel();
+        String weaponName = weapon.getDisplayName();
 
         if (scaleInfoLabel != null) {
-            scaleInfoLabel.setText(String.format("1px = %.2fm | Zoom %d/%d | %s | %s",
-                    coeff, currentZoom, maxZoom - 1, mapTypeName, mapName));
+            scaleInfoLabel.setText(String.format("1px = %.2fm | Zoom %d/%d | %s | %s | %s",
+                    coeff, currentZoom, maxZoom - 1, mapTypeName, mapName, weaponName));
         }
     }
 

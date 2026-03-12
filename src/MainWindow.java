@@ -4,14 +4,17 @@ import java.awt.*;
 public class MainWindow {
     private final JFrame frame;
     private final Settings settings;
+    private Weapon currentWeapon;
+    private JLabel infoLabel;
     private static Point lastWindowPosition = null;
 
     public MainWindow() {
         settings = new Settings();
+        currentWeapon = createWeapon(settings.getWeaponType());
 
         frame = new JFrame("Squad Distance Ruler");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(220, 270);
+        frame.setSize(220, 415);
         frame.setMinimumSize(new Dimension(220, 270));
         frame.setResizable(true);
 
@@ -19,7 +22,6 @@ public class MainWindow {
 
         if (lastWindowPosition != null) {
             frame.setLocation(lastWindowPosition);
-
             if (!isPositionOnScreen(lastWindowPosition)) {
                 frame.setLocationRelativeTo(null);
             }
@@ -28,7 +30,6 @@ public class MainWindow {
         }
 
         JPanel panel = getJPanel();
-
         frame.add(panel);
 
         frame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -37,10 +38,12 @@ public class MainWindow {
                 lastWindowPosition = frame.getLocation();
             }
         });
+
+        updateInfoLabel();
     }
 
     private JPanel getJPanel() {
-        JPanel panel = new JPanel(new GridLayout(5, 1, 5, 5));
+        JPanel panel = new JPanel(new GridLayout(6, 1, 5, 5));
 
         JButton openRulerButton = new JButton("Open Ruler");
         openRulerButton.addActionListener(e -> openOverlayWindow());
@@ -51,20 +54,72 @@ public class MainWindow {
         JButton mapButton = new JButton("Select Map");
         mapButton.addActionListener(e -> showMapDialog());
 
-        JLabel infoLabel = new JLabel(
-                "<html><center>" +
-                        "Resolution: " + settings.getResolution() + "<br>" +
-                        "Map: " + settings.getGameMapObject().getDisplayName() + "<br>" +
-                        "Zoom Levels: " + settings.getTotalZoomLevels() +
-                        "</center></html>"
-        );
+        JButton weaponButton = new JButton("Select Weapon");
+        weaponButton.addActionListener(e -> showWeaponDialog());
+
+        infoLabel = new JLabel();
         infoLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel.add(openRulerButton);
         panel.add(resolutionButton);
         panel.add(mapButton);
+        panel.add(weaponButton);
         panel.add(infoLabel);
+
         return panel;
+    }
+
+    private void updateInfoLabel() {
+        String weaponDisplayName = Settings.getWeaponDisplayName(settings.getWeaponType());
+        infoLabel.setText(String.format(
+                "<html><center>Resolution: %s<br>Map: %s<br>Zoom Levels: %d<br>Weapon: %s</center></html>",
+                settings.getResolution(),
+                settings.getGameMapObject().getDisplayName(),
+                settings.getTotalZoomLevels(),
+                weaponDisplayName
+        ));
+    }
+
+    private Weapon createWeapon(String type) {
+        return switch (type) {
+            case "MORTAR" -> new Mortar();
+            case "BM21_GRAD" -> new BM21Grad();
+            case "UB32_ROCKET" -> new UB32Rocket();
+            case "PICKUP_MORTAR" -> new PickupMortar();
+            case "HELL_CANNON" -> new HellCannon();
+            default -> new NoWeapon();
+        };
+    }
+
+    private void showWeaponDialog() {
+        String[] options = Settings.getAllWeaponDisplayNames();
+        String currentDisplay = currentWeapon.getDisplayName();
+
+        int defaultIndex = 0;
+        for (int i = 0; i < options.length; i++) {
+            if (options[i].equals(currentDisplay)) {
+                defaultIndex = i;
+                break;
+            }
+        }
+
+        String selected = (String) JOptionPane.showInputDialog(
+                frame,
+                "Select weapon type:",
+                "Weapon Selection",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                options,
+                options[defaultIndex]
+        );
+
+        if (selected != null) {
+            String weaponType = Settings.getWeaponTypeFromDisplayName(selected);
+            settings.setWeaponType(weaponType);
+            settings.save();
+            currentWeapon = createWeapon(weaponType);
+            updateInfoLabel();
+        }
     }
 
     private boolean isPositionOnScreen(Point position) {
@@ -150,7 +205,7 @@ public class MainWindow {
         lastWindowPosition = frame.getLocation();
         frame.setState(JFrame.ICONIFIED);
 
-        OverlayWindow overlayWindow = new OverlayWindow(settings);
+        OverlayWindow overlayWindow = new OverlayWindow(settings, currentWeapon);
 
         overlayWindow.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
