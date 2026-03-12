@@ -67,6 +67,21 @@ You can also close the overlay panel by pressing *Escape*.
 
 ***
 
+### 9. Weapon Selection Added
+![Select weapon](imgs/img9.png)
+
+Weapon selection is now available in the main program window. You can choose from a ***Mortar, BM-21 Grad, UB-32, a mortar mounted on a pickup truck, and the Hell Cannon***.
+
+After selecting a weapon, use the overlay window to measure the distance to the target. You will see the effective angle of impact.
+
+![Get angle](imgs/img10.png)
+
+Aim your weapon based on the data provided.
+
+![Gun aiming](imgs/img11.png)
+
+Destroy the target.
+
 # Supported maps and screen resolutions
 
 | Map                     | 1920x1080 | 2560x1440 | 3840x2160 |
