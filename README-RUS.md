@@ -97,7 +97,7 @@ Java 17 или выше.
 | Fool's Road             |    ✔️     |    ✔️     |    ⚠️     |
 | Goose Bay               |    ✔️     |    ✔️     |    ⚠️     |
 | Gorodok                 |    ✔️     |    ✔️     |    ⚠️     |
-| Harju                   |   ✔️git   |     ✔️     |     ⚠️     |
+| Harju                   |    ✔️     |     ✔️     |     ⚠️     |
 | Kamdesh Highlands       |     ❌     |     ❌     |     ❌     |
 | Kohat Toi               |     ❌     |     ❌     |     ❌     | 
 | Kokan                   |     ❌     |     ❌     |     ❌     |
