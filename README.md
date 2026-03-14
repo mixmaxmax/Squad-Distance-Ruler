@@ -96,7 +96,7 @@ Destroy the target.
 | Fool's Road             |    ✔️     |    ✔️     |    ⚠️     |
 | Goose Bay               |    ✔️     |    ✔️     |    ⚠️     |
 | Gorodok                 |    ✔️     |    ✔️     |    ⚠️     |
-| Harju                   |     ❌     |     ❌     |     ❌     |
+| Harju                   |     ✔️     |     ✔️     |     ⚠️     |
 | Kamdesh Highlands       |     ❌     |     ❌     |     ❌     |
 | Kohat Toi               |     ❌     |     ❌     |     ❌     |
 | Kokan                   |     ❌     |     ❌     |     ❌     |

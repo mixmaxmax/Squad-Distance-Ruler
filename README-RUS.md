@@ -97,7 +97,7 @@ Java 17 или выше.
 | Fool's Road             |    ✔️     |    ✔️     |    ⚠️     |
 | Goose Bay               |    ✔️     |    ✔️     |    ⚠️     |
 | Gorodok                 |    ✔️     |    ✔️     |    ⚠️     |
-| Harju                   |     ❌     |     ❌     |     ❌     |
+| Harju                   |   ✔️git   |     ✔️     |     ⚠️     |
 | Kamdesh Highlands       |     ❌     |     ❌     |     ❌     |
 | Kohat Toi               |     ❌     |     ❌     |     ❌     | 
 | Kokan                   |     ❌     |     ❌     |     ❌     |
@@ -109,7 +109,7 @@ Java 17 или выше.
 | Narva                   |    ✔️     |    ✔️     |    ⚠️     |
 | Pacific Proving Grounds |     ❌     |     ❌     |     ❌     |
 | Sanxian Islands         |    ✔️     |    ✔️     |    ⚠️     |
-| Skorpo                  |  ✔️       |     ✔️    |    ⚠️     |
+| Skorpo                  |    ✔️     |     ✔️    |    ⚠️     |
 | Sumari Bala             |     ❌     |     ❌     |     ❌     |
 | Talil Outskirts         |     ❌     |     ❌     |     ❌     |
 | Yegoryevka              |    ✔️     |    ✔️     |    ⚠️     |
