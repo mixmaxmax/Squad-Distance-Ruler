@@ -14,7 +14,7 @@ public class GameMapManager {
         initFoolsRoad();
         initGooseBay();
         initGorodok();
-//        initHarju();
+        initHarju();
 //        initKamdeshHighlands();
 //        initKohatToi();
 //        initKokan();
@@ -634,6 +634,81 @@ public class GameMapManager {
         gorodokCoeffs.put("3840x2160", uhdCoeffs);
 
         addMap(new GameMap("GORODOK", "Gorodok", 8, gorodokCoeffs));
+    }
+
+    private static void initHarju(){
+        Map<String, Map<String, double[]>> harjuCoeffs = new HashMap<>();
+
+        Map<String, double[]> fhdCoeffs = new HashMap<>();
+        fhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/173.0,
+                900.0/259.0,
+                900.0/388.0,
+                300.0/194.0,
+                300.0/291.0,
+                100.0/146.0,
+                100.0/218.0,
+                100.0/258.0
+        });
+        fhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/215.0,
+                900.0/322.0,
+                900.0/482.0,
+                300.0/242.0,
+                300.0/362.0,
+                300.0/542.0,
+                100.0/272.0,
+                100.0/320.0
+        });
+        fhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/180.0,
+                900.0/269.0,
+                900.0/403.0,
+                300.0/202.0,
+                300.0/302.0,
+                300.0/453.0,
+                100.0/227.0,
+                100.0/268.0
+        });
+        harjuCoeffs.put("1920x1080", fhdCoeffs);
+
+        Map<String, double[]> qhdCoeffs = new HashMap<>();
+        qhdCoeffs.put("MAP_ON_DEFAULT_M", new double[]{
+                900.0/231.0,
+                900.0/345.0,
+                900.0/517.0,
+                300.0/259.0,
+                300.0/388.0,
+                100.0/195.0,
+                100.0/291.0,
+                100.0/344.0
+        });
+        qhdCoeffs.put("MAP_ON_DEFAULT_CAPSLOCK", new double[]{
+                900.0/286.0,
+                900.0/429.0,
+                900.0/643.0,
+                300.0/322.0,
+                300.0/482.0,
+                300.0/723.0,
+                100.0/362.0,
+                100.0/427.0
+        });
+        qhdCoeffs.put("MAP_ON_DEFAULT_ENTER", new double[]{
+                900.0/239.0,
+                900.0/358.0,
+                900.0/537.0,
+                300.0/269.0,
+                300.0/403.0,
+                300.0/604.0,
+                100.0/302.0,
+                100.0/357.0
+        });
+        harjuCoeffs.put("2560x1440", qhdCoeffs);
+
+        Map<String, double[]> uhdCoeffs = calculateCoeffsUHD(fhdCoeffs);
+        harjuCoeffs.put("3840x2160", uhdCoeffs);
+
+        addMap(new GameMap("HARJU", "Harju", 8, harjuCoeffs));
     }
 
     private static void initManicouagan(){

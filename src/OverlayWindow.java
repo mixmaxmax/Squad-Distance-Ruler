@@ -195,6 +195,7 @@ public class OverlayWindow extends JFrame {
                 if("FOOLSROAD".equals(settings.getGameMap())) drawScaleLineForFoolsRoad(g);
                 if ("GOOSEBAY".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
                 if("GORODOK".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
+                if("HARJU".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
                 if("MANICOUAGAN".equals(settings.getGameMap())) drawScaleLinesTypeOne(g);
                 if ("MUTAHA".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
                 if ("NARVA".equals(settings.getGameMap())) drawScaleLinesTypeThree(g);
